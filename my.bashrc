@@ -14,8 +14,9 @@ alias df='df -h'
 
 alias vimrc="vim $MY_BASHRC_FILE"
 alias soc="source $SYSTEM_BASHRC_PATH"
-alias cdw='cd $KUBEEDGE_PATH'
+alias cdk='cd $KUBEEDGE_PATH'
 alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
+alias cdm='cd $MY_PATH'
 alias cdy='cd ~/yaml'
 alias fuck='echo fuck'
 
