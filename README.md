@@ -5,6 +5,6 @@ Help for config bashrc
 ```go
 git clone https://github.com/GsssC/bashrc.git
 cd bashrc
-chomod +x install.sh
+chmod +x install.sh
 ./install.sh
 ```
