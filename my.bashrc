@@ -5,13 +5,14 @@ export GOPATH='/root/go'
 export PATH=$PATH:/$GOPATH/bin
 export KUBEEDGE_PATH="$GOPATH/src/kubeedge/kubeedge"
 export MY_PATH="$HOME/$WHO_ARE_YOU"
-export MY_BASHRC_PATH="$MY_PATH/bashrc"
+export MY_BAHSRC_PATH="$MY_PATH/bahsrc"
+export MY_BASHRC_FILE="$MY_PATH/bashrc/my.bashrc"
 export SYSTEM_BASHRC_PATH="$HOME/.bashrc"
 
 
 alias df='df -h'
 
-alias vimrc='vim MY_BASHRC_PATH'
+alias vimrc="vim $MY_BASHRC_FILE"
 alias soc="source $SYSTEM_BASHRC_PATH"
 alias cdw='cd $KUBEEDGE_PATH'
 alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
