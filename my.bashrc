@@ -1,14 +1,18 @@
 #!/bin/bash
-# replace gg here to show who are you
-export WHO_ARE_YOU='gg'
+# replace sel here to show who are you
+export WHO_ARE_YOU='sel'
 export GOPATH='/root/go'
 export PATH=$PATH:/$GOPATH/bin
 export KUBEEDGE_PATH="$GOPATH/src/kubeedge/kubeedge"
+export MY_PATH="$HOME/$WHO_ARE_YOU"
+export MY_BASHRC_PATH="$MY_PATH/bashrc"
+export SYSTEM_BASHRC_PATH="$HOME/.bashrc"
+
 
 alias df='df -h'
 
-alias vimrc='vim ~/.bashrc'
-alias soc='source ~/.bashrc'
+alias vimrc='vim MY_BASHRC_PATH'
+alias soc="source $SYSTEM_BASHRC_PATH"
 alias cdw='cd $KUBEEDGE_PATH'
 alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
 alias cdy='cd ~/yaml'
@@ -22,5 +26,5 @@ alias kga='kubectl get all -owide'
 alias kgn='kubectl get node -owide'
 
 #Config belong to GsssC
-export GG_PATH="/root/$WHO_ARE_YOU"
+export GG_PATH="$MY_PATH"
 alias cdg='cd $GG_PATH'

@@ -1,7 +1,15 @@
 #!/bin/bash
 CURRENT_DIR=$(cd `dirname $0`;pwd)
-MY_BASHRC_PATH="$CURRENT_DIR/my.bashrc"
-SYSTEM_BASHRC_PATH="$HOME/.bashrc"
+source "$CURRENT_DIR/my.bashrc"
+#check path exsists
+if [ ! -d $MY_PATH ];then
+	mkdir -p $MY_PATH
+fi
+if [ ! -d $GOPATH ];then
+	mkdir -p $GOPATH
+]
+fi
+mv $CURRENT_DIR $MY_PATH
 
 add="
 #Source my bashrc
