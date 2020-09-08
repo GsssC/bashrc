@@ -7,13 +7,13 @@ export KUBEEDGE_PATH="$GOPATH/src/kubeedge/kubeedge"
 export MY_PATH="$HOME/$WHO_ARE_YOU"
 export MY_BASHRC_PATH="$MY_PATH/bashrc"
 export MY_BASHRC_FILE="$MY_PATH/bashrc/my.bashrc"
-export SYSTEM_BASHRC_PATH="$HOME/.bashrc"
+export SYSTEM_BASHRC_FILE="$HOME/.bashrc"
 
 
 alias df='df -h'
 
 alias vimrc="vim $MY_BASHRC_FILE"
-alias soc="source $SYSTEM_BASHRC_PATH"
+alias soc="source $SYSTEM_BASHRC_FILE"
 alias cdk='cd $KUBEEDGE_PATH'
 alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
 alias cdm='cd $MY_PATH'

@@ -12,8 +12,9 @@ fi
 if [ $CURRENT_DIR != $MY_BASHRC_PATH ];then
 	mv $CURRENT_DIR $MY_PATH
 fi
-echo $CURRENT_DIR
-echo $MY_BASHRC_PATH
+#echo "PAST_DIR: $CURRENT_DIR"
+#echo "MY_BASHRC_PATH: $MY_BASHRC_PATH"
+#echo "pwd: `pwd`"
 
 add="
 #Source my bashrc
@@ -24,9 +25,8 @@ fi
 "
 check="grep -A 10 \"Source my bashrc\" $SYSTEM_BASHRC_PATH"
 check_result=`eval $check`
-#echo "check cmd:$check"
-#echo "check result: 
-#$check_result"
+#echo "check cmd: $check"
+#echo "check result: $check_result"
 
 #:<<!
 if [ "$check_result" == "" ];then
@@ -36,6 +36,6 @@ if [ "$check_result" == "" ];then
 else
 	echo "You have installed mybashrc"
 fi
-echo "use **vimrc** to modify, use **soc** to apply"
+echo "use **source $SYSTEM_BASHRC_FILE** to apply, then use **vimrc** to modify"
 #!
 
