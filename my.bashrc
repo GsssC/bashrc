@@ -5,7 +5,7 @@ export GOPATH='/root/go'
 export PATH=$PATH:/$GOPATH/bin
 export KUBEEDGE_PATH="$GOPATH/src/kubeedge/kubeedge"
 export MY_PATH="$HOME/$WHO_ARE_YOU"
-export MY_BAHSRC_PATH="$MY_PATH/bahsrc"
+export MY_BASHRC_PATH="$MY_PATH/bashrc"
 export MY_BASHRC_FILE="$MY_PATH/bashrc/my.bashrc"
 export SYSTEM_BASHRC_PATH="$HOME/.bashrc"
 

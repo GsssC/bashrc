@@ -12,6 +12,8 @@ fi
 if [ $CURRENT_DIR != $MY_BASHRC_PATH ];then
 	mv $CURRENT_DIR $MY_PATH
 fi
+echo $CURRENT_DIR
+echo $MY_BASHRC_PATH
 
 add="
 #Source my bashrc
@@ -28,7 +30,7 @@ check_result=`eval $check`
 
 #:<<!
 if [ "$check_result" == "" ];then
-	echo "You have installed mybashrc"
+	echo "You have not installed mybashrc"
 	echo "$add" >> $SYSTEM_BASHRC_PATH
 	echo "Successfully install mybashrc to $MY_BASHRC_FILE"
 else
