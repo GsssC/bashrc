@@ -1,8 +1,9 @@
 #!/bin/bash
 # replace sel here to show who are you
 export WHO_ARE_YOU='sel'
+export GOROOT='/usr/local/go'
 export GOPATH='/root/go'
-export PATH=$PATH:/$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:/$GOPATH/bin
 export KUBEEDGE_PATH="$GOPATH/src/kubeedge/kubeedge"
 export MY_PATH="$HOME/$WHO_ARE_YOU"
 export MY_BASHRC_PATH="$MY_PATH/bashrc"
@@ -24,7 +25,7 @@ alias gs='git status'
 alias gm='git commit -m'
 
 alias k='kubectl'
-alias kga='kubectl get all -owide'
+alias kga='kubectl get all -A -owide'
 alias kgn='kubectl get node -owide'
 
 #Config belong to GsssC
