@@ -23,6 +23,7 @@ alias fuck='echo fuck'
 
 alias gs='git status'
 alias gm='git commit -m'
+alias g='git'
 
 alias k='kubectl'
 alias kga='kubectl get all -A -owide'
