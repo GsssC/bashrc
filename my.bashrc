@@ -32,3 +32,8 @@ alias kgn='kubectl get node -owide'
 #Config belong to GsssC
 export GG_PATH="$MY_PATH"
 alias cdg='cd $GG_PATH'
+
+#Install Golang
+
+
+

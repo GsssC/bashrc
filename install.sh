@@ -15,7 +15,6 @@ fi
 #echo "PAST_DIR: $CURRENT_DIR"
 #echo "MY_BASHRC_PATH: $MY_BASHRC_PATH"
 #echo "pwd: `pwd`"
-
 add="
 #Source my bashrc
 export MY_BASHRC_FILE=$MY_BASHRC_FILE
@@ -23,7 +22,7 @@ if [ -f \$MY_BASHRC_FILE ];then
 	source \$MY_BASHRC_FILE
 fi
 "
-check="grep -A 10 \"Source my bashrc\" $SYSTEM_BASHRC_PATH"
+check="grep \"Source my bashrc\" $SYSTEM_BASHRC_FILE"
 check_result=`eval $check`
 #echo "check cmd: $check"
 #echo "check result: $check_result"
@@ -31,7 +30,7 @@ check_result=`eval $check`
 #:<<!
 if [ "$check_result" == "" ];then
 	echo "You have not installed mybashrc"
-	echo "$add" >> $SYSTEM_BASHRC_PATH
+	echo "$add" >> $SYSTEM_BASHRC_FILE
 	echo "Successfully install mybashrc to $MY_BASHRC_FILE"
 else
 	echo "You have installed mybashrc"
