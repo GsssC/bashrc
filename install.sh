@@ -2,6 +2,8 @@
 
 #exit immediatly
 set -e
+#no emit unset var
+set -u
 
 CURRENT_DIR=$(cd `dirname $0`;pwd)
 source "$CURRENT_DIR/my.bashrc"
@@ -16,7 +18,7 @@ fi
 if [ $CURRENT_DIR != $MY_BASHRC_PATH ];then
 	mv $CURRENT_DIR $MY_PATH
 fi
-#echo "PAST_DIR: $CURRENT_DIR"
+#echo "Current Path: $CURRENT_DIR"
 #echo "MY_BASHRC_PATH: $MY_BASHRC_PATH"
 #echo "pwd: `pwd`"
 add="
@@ -35,7 +37,7 @@ check_result=`eval $check`
 if [ "$check_result" == "" ];then
 	echo "You have not installed mybashrc"
 	echo "$add" >> $SYSTEM_BASHRC_FILE
-	echo "Successfully install mybashrc to $MY_BASHRC_FILE"
+	echo "Successfully install mybashrc to $SYSTEM_BASHRC_FILE"
 else
 	echo "You have installed mybashrc"
 fi
