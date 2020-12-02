@@ -10,7 +10,7 @@ export SYSTEM_BASHRC_FILE="$HOME/.bashrc"
 #Config belong to GsssC
 export GG_PATH="$MY_PATH"
 alias cdg='cd $GG_PATH'
-alias vimrc="vim $MY_BASHRC_FILE"
+alias bashrc="vim $MY_BASHRC_FILE"
 alias soc="source $SYSTEM_BASHRC_FILE"
 alias cdm='cd $MY_PATH'
 alias cdy='cd ~/yaml'
