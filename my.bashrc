@@ -9,16 +9,18 @@ export SYSTEM_BASHRC_FILE="$HOME/.bashrc"
 
 #Config belong to GsssC
 export GG_PATH="$MY_PATH"
-alias cdg='cd $GG_PATH'
+alias cdg="cd $GG_PATH"
+alias vimrc="vim $HOME/.vimrc" 
 alias bashrc="vim $MY_BASHRC_FILE"
 alias soc="source $SYSTEM_BASHRC_FILE"
-alias cdm='cd $MY_PATH'
+alias cdm="cd $MY_PATH"
 alias cdy='cd ~/yaml'
 
 #Install Golang
-export GOROOT='/usr/local/go'
-export GOPATH='~/go'
+export GOROOT="$HOME/sdk/go1.15.1"
+export GOPATH="$HOME/Documents/Go"
 export GOVERSION='1.14.11'
+export GOPROXY="https://goproxy.io,direct"
 export PATH=$PATH:$GOROOT/bin:/$GOPATH/bin
 
 #KubeEdge
@@ -45,4 +47,12 @@ alias df='df -h'
 alias fuck='echo fuck'
 
 
-
+#Windows 10
+export GITHUB_PATH="$HOME/Documents/GitHub"
+export KUBEEDGE_PATH="$GITHUB_PATH/kubeedge"
+alias cdg="cd $GITHUB_PATH"
+alias cdk="cd $KUBEEDGE_PATH"
+alias cds="cd $GITHUB_PATH/sel-articles"
+alias ssh80="ssh root@10.10.102.80"
+#export LC_ALL="zh_CN.UTF-8"
+#export LANG="zh_CN.UTF-8"
