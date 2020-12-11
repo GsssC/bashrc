@@ -41,7 +41,7 @@ if [ "$check_result" == "" ];then
 else
 	echo "You have installed mybashrc"
 fi
-echo "use **source $SYSTEM_BASHRC_FILE** to apply, then use **vimrc** to modif\n"
+echo "use **source $SYSTEM_BASHRC_FILE** to apply, then use **bashrc** to modif\n"
 #!
 
 #Install Golang
