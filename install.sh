@@ -30,8 +30,8 @@ fi
 "
 check="grep \"Source my bashrc\" $SYSTEM_BASHRC_FILE"
 check_result=`eval $check`
-#echo "check cmd: $check"
-#echo "check result: $check_result"
+echo "check cmd: $check"
+echo "check result: $check_result"
 
 #:<<!
 if [ "$check_result" == "" ];then
