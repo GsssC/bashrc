@@ -17,7 +17,7 @@ alias cdy="cd $HOME/yaml"
 
 #Install Golang
 export GOROOT='/usr/local/go'
-export GOPATH='$HOME/go'
+export GOPATH="$HOME/go"
 export GOVERSION='1.14.11'
 export GO111MODULE="on"
 export PATH=$PATH:$GOROOT/bin:/$GOPATH/bin
