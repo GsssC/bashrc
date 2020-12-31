@@ -13,11 +13,11 @@ alias cdg='cd $GG_PATH'
 alias bashrc="vim $MY_BASHRC_FILE"
 alias soc="source $SYSTEM_BASHRC_FILE"
 alias cdm='cd $MY_PATH'
-alias cdy='cd ~/yaml'
+alias cdy="cd $HOME/yaml"
 
 #Install Golang
 export GOROOT='/usr/local/go'
-export GOPATH='~/go'
+export GOPATH='$HOME/go'
 export GOVERSION='1.14.11'
 export GO111MODULE="on"
 export PATH=$PATH:$GOROOT/bin:/$GOPATH/bin
