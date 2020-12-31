@@ -19,6 +19,7 @@ alias cdy='cd ~/yaml'
 export GOROOT='/usr/local/go'
 export GOPATH='~/go'
 export GOVERSION='1.14.11'
+export GO111MODULE="on"
 export PATH=$PATH:$GOROOT/bin:/$GOPATH/bin
 
 #KubeEdge
