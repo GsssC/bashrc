@@ -31,6 +31,8 @@ alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
 alias k='kubectl'
 alias kga='kubectl get all -A -owide'
 alias kgn='kubectl get node -owide'
+alias kgp='kubectl get pods -owide'
+alias ssk='systemctl status kubelet'
 
 #Git
 export GITROOT='/usr/local/git'
@@ -44,6 +46,10 @@ alias g='git'
 #Others
 alias df='df -h'
 alias fuck='echo fuck'
+alias ne="pkill edgecore;sleep 1s;nohup $KUBEEDGE_PATH/_output/local/bin/edgecore 2>&1 1>$MY_PATH/elog &"
+alias elog="vim $MY_PATH/elog"
+alias api-test="git pull --rebase origin apiserver-lite;make WHAT=edgecore"
+alias sqlite3="sqlite3 /var/lib/kubeedge/edgecore.db"
 
 
 
