@@ -28,6 +28,7 @@ alias cdk='cd $KUBEEDGE_PATH'
 alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
 
 #Kubernetes
+export KUBECONFIG="/etc/kubernetes/admin.conf"
 alias k='kubectl'
 alias kga='kubectl get all -A -owide'
 alias kgn='kubectl get node -owide'

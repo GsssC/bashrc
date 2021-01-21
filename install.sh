@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #exit immediatly
-set -e
+#set -e
 #no emit unset var
 set -u
 
@@ -13,7 +13,6 @@ if [ ! -d $MY_PATH ];then
 fi
 if [ ! -d $GOPATH ];then
 	mkdir -p $GOPATH
-]
 fi
 if [ $CURRENT_DIR != $MY_BASHRC_PATH ];then
 	mv $CURRENT_DIR $MY_PATH
@@ -48,15 +47,15 @@ echo "use **source $SYSTEM_BASHRC_FILE** to apply, then use **bashrc** to modif\
 echo "--------Tring to install Golang---------"
 if [ ! -d $GOROOT ];then
 	echo "You have not installed Golang"
-	read -p "Would you like to upgrade git to $GITVERSION (y/no):" res
+	read -p "Would you like to upgrade golang to $GOVERSION (y/no):" res
 	if [ $res == "y" ];then
 		filename="go${GOVERSION}.linux-amd64.tar.gz"
 		filepath="/root/$filename"
 		link="https://studygolang.com/dl/golang/$filename"
-		if [ ! -f $file ];then
-			wget -P $filepath $link
+		if [ ! -f $filepath ];then
+			wget -O $filepath $link
+			tar -C /usr/local -xzf $filepath
 		fi
-		tar -C /usr/local -xzf $file
 	fi
 else
 	echo "You have installed golang"
@@ -68,23 +67,29 @@ echo "--------Tring to install Git"
 echo "Your git version: `git --version`"
 read -p "Would you like to upgrade git to $GITVERSION (y/no):" res
 if [ $res == "y" ];then
-	yum remove git -y
+	installdir="/tmp/sel/git"
 	filename="git-${GITVERSION}.tar.xz"
-	filepath="/root/git-${GITVERSION}.tar.xz"
+	filepath="$installdir/$filename"
 	link="https://www.kernel.org/pub/software/scm/git/${filename}"
+	untardir="$installdir/untar"
+	if [ ! -d $installdir ];then
+		mkdir -p $installdir
+	fi
 	if [ ! -f $filepath ];then
-		wget -P $filepath $link
+		wget -O $filepath $link
 	fi
-	if [ ! -d $GITSRC ];then
-		mkdir -P $GITSRC
+	if [ ! -d $untardir ];then
+		mkdir -p $untardir
+		tar -C $untardir -xf $filepath
 	fi
-	tar -C $GITSRC -vxf $filepath
-	cd $GITSRC/git-${GITVERSION}
+	cd $untardir/git-${GITVERSION}
 	#yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc
 	#yum install -y gcc perl-ExtUtils-MakeMaker
+	yum remove git -y
 	rm -rf $GITROOT/*
 	make prefix=$GITROOT all
 	make prefix=$GITROOT install
+	rm -rf $installdir
 fi
 #Install KubeEdge-src
 echo "--------Tring to install kubeedge src--------"
@@ -92,6 +97,8 @@ if [ ! -d $KUBEEDGE_PATH ];then
 	echo "You have not installed kubeedge src"
 	read -p "Would you like to download kubeedge-src (y/no):" res
 	if [ $res == "y" ];then
+		mkdir -p $KUBEEDGE_PATH
+		cd $KUBEEDGE_PATH
 		git clone https://github.com/kubeedge/kubeedge.git $KUBEEDGE_PATH
 	fi
 else
