@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #exit immediatly
-set +e
+set -e
 #no emit unset var
 set -u
 
@@ -36,12 +36,7 @@ if [ -f \$MY_BASHRC_FILE ];then
 	source \$MY_BASHRC_FILE
 fi"
 
-check="grep \"Source my bashrc\" $SYSTEM_BASHRC_FILE"
-check_result=`eval $check`
-echo "check cmd: $check"
-echo "check result: $check_result"
-
-if [ "$check_result" == "" ];then
+if [ `grep "Source my bashrc" $SYSTEM_BASHRC_FILE|wc -l`x == "0"x ];then
 	echo "You have not installed mybashrc"
 	echo "$add" >> $SYSTEM_BASHRC_FILE
 	echo "Successfully install mybashrc to $SYSTEM_BASHRC_FILE"
