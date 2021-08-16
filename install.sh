@@ -57,7 +57,7 @@ echo "OS Type: $OS"
 
 #Install Golang
 echo "--------Tring to install Golang---------"
-if [ ! -d $GOROOT ] && [ $OS == "Linux"];then
+if [ ! -d $GOROOT ] && [ $OS == "Linux" ];then
 	echo "You have not installed Golang"
 	read -p "Would you like to install golang $GOVERSION (y/no):" res
 	if [ $res == "y" ];then
@@ -98,7 +98,7 @@ if [ $OS == "Linux" ];then
 		cd $untardir/git-${GITVERSION}
 		#yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc
 		#yum install -y gcc perl-ExtUtils-MakeMaker
-		yum remove git -y
+		#yum remove git -y
 		rm -rf $GITROOT/*
 		make prefix=$GITROOT all
 		make prefix=$GITROOT install
