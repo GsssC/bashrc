@@ -78,6 +78,7 @@ alias proxy="export http_proxy=$http_proxy_x;export https_proxy=$https_proxy_x"
 alias uproxy="unset http_proxy https_proxy"
 
 
+source $PRIVATE_BASHRC_FILE
 
 #Drops
 #alias ne="pkill edgecore;sleep 1s;nohup $KUBEEDGE_PATH/_output/local/bin/edgecore 2>&1 1>$MY_PATH/elog &"
