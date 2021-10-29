@@ -23,8 +23,6 @@ alias cdy="cd $HOME/yaml"
 alias ll="ls -l --show-control-chars --color=auto"
 alias cd-="popd"
 alias cd="pushd 1> /dev/null"
-export LESSHARESET=utf-8 
-export LC_CTYPE=zh_CN.UTF-8@cjknarrow
 
 #Install Golang
 #export GOROOT="$HOME/go/go1.14.11"
