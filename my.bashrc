@@ -23,7 +23,6 @@ alias cdy="cd $HOME/yaml"
 alias ll="ls -l --show-control-chars --color=auto"
 alias cd-="popd"
 alias cd="pushd 1> /dev/null"
-alias make="mingw32-make.exe"
 export LESSHARESET=utf-8 
 export LC_CTYPE=zh_CN.UTF-8@cjknarrow
 
