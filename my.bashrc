@@ -3,17 +3,18 @@ export WHO_ARE_YOU='GG'
 export MY_PATH="$HOME/$WHO_ARE_YOU"
 export MY_BASHRC_PATH="$MY_PATH/bashrc"
 export MY_BASHRC_FILE="$MY_PATH/bashrc/my.bashrc"
+export PRIVATE_BASHRC_FILE="$MY_PATH/bashrc/private.bashrc"
 export SYSTEM_BASHRC_FILE="$HOME/.bashrc"
 export MY_VIMRC_FILE="$HOME/.vimrc"
 
 #set
 set -o vi
 
-
 #Config belong to GsssC
 export GG_PATH="$MY_PATH"
 alias cdg='cd $GG_PATH'
 alias bashrc="vim $MY_BASHRC_FILE"
+alias pbashrc="vim $PRIVATE_BASHRC_FILE"
 alias vimrc="vim $MY_VIMRC_FILE"
 alias gconfig="vim ~/.gitconfig"
 alias soc="source $SYSTEM_BASHRC_FILE"
@@ -22,27 +23,31 @@ alias cdy="cd $HOME/yaml"
 alias ll="ls -l --show-control-chars --color=auto"
 alias cd-="popd"
 alias cd="pushd 1> /dev/null"
+alias make="mingw32-make.exe"
 export LESSHARESET=utf-8 
 export LC_CTYPE=zh_CN.UTF-8@cjknarrow
 
 #Install Golang
-export GOROOT="$HOME/go/go1.14.6"
+#export GOROOT="$HOME/go/go1.14.11"
+export GOROOT="$HOME/go/go1.15"
 export GOPATH="$HOME/go"
-export GOVERSION='1.14.11'
+#export GOVERSION='1.14.11'
 export GO111MODULE="on"
 export GOPROXY=http://cmc.centralrepo.rnd.huawei.com/cbu-go,direct
 alias cpgp="echo GOPROXY=$GOPROXY | clip;"
 export GOSUMB="off"
 export GONOSUMDB=*
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:"/d/mingw64/bin"
 
 #KubeEdge
 export KUBEEDGE_PATH="$GOPATH/src/github.com/kubeedge/kubeedge"
 alias cdk='cd $KUBEEDGE_PATH'
 alias cdo='cd $KUBEEDGE_PATH/_output/local/bin'
+alias dirs='dirs -v'
 
 #Kubernetes
-export KUBECONFIG="/etc/kubernetes/admin.conf"
+export KUBECONFIG="$HOME/.kube/kubeconfig"
 alias k='kubectl'
 alias kga='kubectl get all -A -owide'
 alias kgn='kubectl get node -owide'
@@ -55,12 +60,14 @@ export GITSRC='/usr/local/src'
 export GITVERSION="2.20.1"
 PATH=$PATH:$GITROOT/bin
 alias gs='git status'
-alias gm='git commit -a'
+alias gm='git add .;git commit'
 alias gc='git checkout .'
 alias gr='git rebase -i'
 alias gl='git log'
 alias gcdf='git clean -df'
 alias g='git'
+alias gr2='git rebase -i HEAD~2'
+alias gr1='git add .;git commit --amend'
 
 #Others
 alias df='df -h'
@@ -68,10 +75,9 @@ alias fuck='echo fuck'
 alias django-admin="python -m django"
 export CBB_ALGO_MODE="gm"
 
-#SSH
-alias ssh146='ssh root@100.95.171.146'
-alias sshu3='echo "_h4IGmE1jndvj(n_" | clip;ssh -i ~/g00613881.pem  g00613881@csm-ssh-ulanqab3.inhuawei.com -p 5555'
-alias sshz='echo "zhaor_fly@163.com" | clip;ssh root@100.94.11.85'
+alias proxy="export http_proxy=$http_proxy_x;export https_proxy=$https_proxy_x"
+alias uproxy="unset http_proxy https_proxy"
+
 
 
 #Drops
