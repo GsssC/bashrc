@@ -32,10 +32,8 @@ echo "------- Checking mybashrc is installed---------"
 
 add="#Source my bashrc
 export MY_BASHRC_FILE=$MY_BASHRC_FILE
-export PRIVATE_BASHRC_FILE=$PRIVATE_BASHRC_FILE
 if [ -f \$MY_BASHRC_FILE ];then
 	source \$MY_BASHRC_FILE
-    source \$PRIVATE_BASHRC_FILE
 fi"
 
 if [ `grep "Source my bashrc" $SYSTEM_BASHRC_FILE|wc -l`x == "0"x ];then
